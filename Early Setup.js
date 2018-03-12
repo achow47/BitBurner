@@ -4,7 +4,6 @@
 - Kill Existing Scripts
 */
 
-
 //Set Arguments for Script
 files = ["early-hack.script", "weaken.script"];
 threads = args[0];
@@ -15,7 +14,7 @@ securityThresh = args[4];
 
 //SCP Copy the Hacking Files from Home to Target
 scp(files, "home", target);
-tprint("Files copied succesfully.");
+tprint("Files copied successfully.");
 
 //Check for Root Access, if not, NUKE
 if (hasRootAccess(target) === false) {
@@ -23,27 +22,6 @@ if (hasRootAccess(target) === false) {
         BruteSSH(target);
     }
     nuke(target);
-}
-
-
-if (hasRootAccess(target) === true) {
-    tprint("Root Access Granted");
-}
-
-if (hasRootAccess(target) === false) {
-    tprint("Root Access Denied");
-}
-
-//Kill Existing Early Hack Template Script
-if (isRunning("early-hack-template.script", target) === true) {
-    kill("early-hack-template.script", target);
-    tprint("early-hack-template.script Killed");
-}
-
-//Kill Existing Weaken Script
-if (isRunning("weaken.script", target) === true) {
-    kill("weaken.script", target);
-    tprint("weaken.script Killed");
 }
 
 //Execute Early Hack Script

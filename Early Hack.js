@@ -1,10 +1,8 @@
+//Early Hack Script
+
 target = args[0];
 moneyThresh = args[1];
 securityThresh = args[2];
-
-tprint(target);
-tprint(moneyThresh);
-tprint(securityThresh);
 
 while(true) {
     if (getServerSecurityLevel(target) > securityThresh) {

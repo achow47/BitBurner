@@ -26,7 +26,7 @@ if (hasRootAccess(target) === true) {
 //Get Root Access
 if (rootFlag === 0) {
     if (fileExists("BruteSSH.exe", "home")) {
-        BruteSSH(target);
+        brutessh(target);
     }
     nuke(target);
     rootFlag = 1
